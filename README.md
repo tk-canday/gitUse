@@ -1,14 +1,4 @@
-# 课程笔记
-
-## 反馈
-
----
-
-## 复习
-
----
-
-## 知识点
+## 主要工具
 
 - 版本控制
 - SVN
@@ -212,20 +202,28 @@ A 用户在修改完成之后提交 kingtuns.txt 到服务器， 这个时候提
 
 - 下载地址：https://git-scm.com/
 
-#### git-bash 常用命令
+#### bash 常用命令
+- pwd (print working dirstory) 显示当前路径
+- ls 显示全部文件
+- cd (change dirstory) 进入文件
+- cd ..  进入上级目录
+- mkdir (make dirstory) 创建目录
+- touch 创建文件
 
-- pwd
-- ls
-  + ls -a
-- cd
-- mkdir
-- clear
-- rmdir
-  + 只能删除空目录
-- rm
-  + rm 文件名
-  + rm -rf 目录名
-    * 注：很强大，可以删除非空目录，以及一些比较顽固的文件或者目录
+- rm 
+    + rm  文件名         删除文件 
+    + rm -r  (remove recusion) 删除目录
+- less 分页阅读; q 退出
+- mv 
+    + mv + 位置      移动文件到
+    + mv + 旧名+新名 重命名
+- cp (copy) 复制 ,重命名方法与 rm 相同
+
+- cat 查看文件全部内容
+- head -数字   查看文件前"xx"行
+- tail -数字   查看文件后"xx"行
+
+- history 查看操作历史
 
 #### 初始化配置
 
@@ -246,13 +244,13 @@ git config --list
   + 初始化一个 Git 仓库
 - `git status`
   + 查看当前工作区、暂存区、本地仓库的状态
-- `git add`
-- `git commit`
+- `git add`     将 工作区 文件提交到 暂存区
+- `git commit`  将 暂存区 文件全部提交到 本地仓库
   + 示例：`git commit -m "日志说明" --author="操作者姓名 <邮箱>"`
   + 执行 `git commit` 的时候，Git 会要求具有用户名和邮箱的参数选项
   + 可以通过 `git config` 命令配置一下用户名和邮箱
-- `git log`
-- `gitk`
+- `git log`   查看记录
+- `gitk`      图形化界面
 
 总结：操作 Git 的基本工作流程就是先修改文件，然后执行 `git add` 命令。
 `git add` 命令会把文件加入到暂存区，接着就可以执行 `git commit` 命令，将文件存入文档库，
