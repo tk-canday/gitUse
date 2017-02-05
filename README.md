@@ -1,4 +1,4 @@
-## 主要工具
+## 主要工具 
 
 - 版本控制
 - SVN
@@ -215,13 +215,13 @@ A 用户在修改完成之后提交 kingtuns.txt 到服务器， 这个时候提
     + rm -r  (remove recusion) 删除目录
 - less 分页阅读; q 退出
 - mv 
-    + mv + 位置      移动文件到
-    + mv + 旧名+新名 重命名
+    + mv  [位置]      移动文件到
+    + mv  [旧名] [新名]   重命名
 - cp (copy) 复制 ,重命名方法与 rm 相同
 
 - cat 查看文件全部内容
-- head -数字   查看文件前"xx"行
-- tail -数字   查看文件后"xx"行
+- head [-数字]   查看文件前"xx"行
+- tail [-数字]   查看文件后"xx"行
 
 - history 查看操作历史
 
@@ -311,11 +311,14 @@ $ git stash pop
 
 ### 分支管理
 ```bash
-# 查看分支
+# 列出所有分支
 $ git branch
 
-# 新建分支
+# 基于当前分支新建一个分支，但依然停留在当前分支
 $ git branch [branch-name]
+
+# 基于当前分支新建一个分支，并切换到该分支
+$ git checkout -b [branch-name]
 
 # 切换到某个分支
 $ git chechout [brach-name]
@@ -323,22 +326,40 @@ $ git chechout [brach-name]
 # 删除分支
 $ git branch -d [branch-name]
 
-# 将其他分支合并到当前分支
+# 将指定分支合并到当前分支
 $ git merge [branch-name]
 
-#
 
 ```
 
 ### 远程同步
 
-- remote
-- push
-- pull
+```bash
+# 下载一个远程仓库
+$ git clone [url]
+
+# 显示所有远程仓库
+$ git remote -v
+
+# 显示某个远程仓库的信息
+$ git remote show [remote]
+
+# 增加一个新的远程仓库，并命名
+$ git remote add [shortname] [url]
+
+# 取回远程仓库的变化，并与本地分支合并
+$ git pull [remote] [branch]
+
+# 上传本地指定分支到远程仓库
+$ git push [remote] [branch]
+
+# 强行推送当前分支到远程仓库，即使有冲突
+$ git push [remote] --force
+```
 
 ### 在线仓库托管服务
 
-> 一个不知道 github、stackoverflow 的程序员想想都是可悲的
+Git 工作流程:git flow / github flow /gitlab flow
 
 - github
 - 码云
@@ -358,8 +379,8 @@ $ git merge [branch-name]
 > 可以实现多人协作
 > 提供了一个可视化界面（Web Page）让你能直观清晰的了解你的项目源代码
 
-### 基本使用
+### 与 Github 进行多人协作
 
-- 注册
-- 登陆
-- 创建远程仓库
+#### Collaborators
+
+#### Pull Request
