@@ -265,10 +265,16 @@ git config --list
 
 ### 版本回退
 
-```bash
-# git rm --cached <file>
+```gitbash
+
+# 删除暂存区的文件
+$git rm --cached <file>
+
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
+
+#重命名文件并且提交到暂存区(省略add)
+$ git mv [oldFileName] [newFileName]
 
 # 恢复某个commit的指定文件到暂存区和工作区
 $ git checkout [commit] [file]
@@ -278,6 +284,8 @@ $ git checkout .
 
 # 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变
 $ git reset [file]
+
+--head:git log 中最新的版本
 
 # 重置暂存区与工作区，与上一次commit保持一致
 $ git reset --hard
@@ -298,6 +306,27 @@ $ git revert [commit]
 # 暂时将未提交的变化移除，稍后再移入
 $ git stash
 $ git stash pop
+```
+
+### 分支管理
+```bash
+# 查看分支
+$ git branch
+
+# 新建分支
+$ git branch [branch-name]
+
+# 切换到某个分支
+$ git chechout [brach-name]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 将其他分支合并到当前分支
+$ git merge [branch-name]
+
+#
+
 ```
 
 ### 远程同步
