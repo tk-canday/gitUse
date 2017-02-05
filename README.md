@@ -244,6 +244,7 @@ git config --list
   + 初始化一个 Git 仓库
 - `git status`
   + 查看当前工作区、暂存区、本地仓库的状态
+- `git clone [url] --depth=1`	下载仓库文件,并规定下载深度
 - `git add`     将 工作区 文件提交到 暂存区
 - `git commit`  将 暂存区 文件全部提交到 本地仓库
   + 示例：`git commit -m "日志说明" --author="操作者姓名 <邮箱>"`
