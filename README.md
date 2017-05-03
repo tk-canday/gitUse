@@ -314,6 +314,9 @@ $ git stash pop
 # 列出所有分支
 $ git branch
 
+# 查看所有分支 及 源
+$ git branch -a 
+
 # 基于当前分支新建一个分支，但依然停留在当前分支
 $ git branch [branch-name]
 
