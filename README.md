@@ -321,7 +321,7 @@ $ git branch [branch-name]
 $ git checkout -b [branch-name]
 
 # 切换到某个分支
-$ git chechout [brach-name]
+$ git checkout [brach-name]
 
 # 删除分支
 $ git branch -d [branch-name]
