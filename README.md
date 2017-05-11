@@ -252,11 +252,14 @@ git config --list
 - `git log`   查看记录
 - `gitk`      图形化界面
 
-总结：操作 Git 的基本工作流程就是先修改文件，然后执行 `git add` 命令。
+总结：
+```
+操作 Git 的基本工作流程就是先修改文件，然后执行 `git add` 命令。
 `git add` 命令会把文件加入到 暂存区，
-暂存之后 拉取上级分支代码，然后合并到本地分支，
+暂存之后 拉取上级分支代码，然后合并到本地分支，（如果这时候有冲突可以手动解决冲突）
 接着就可以执行 `git commit` 命令，将文件存入文档库，
 从而形成一次历史记录。
+```
 
 - 问题1：关于 Git-bash 中文问题
 - [Git for Windows Unicode Support](https://github.com/msysgit/msysgit/wiki/Git-for-Windows-Unicode-Support)
