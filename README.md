@@ -188,8 +188,7 @@ A 用户在修改完成之后提交 kingtuns.txt 到服务器， 这个时候提
   + 保存历史记录
   + 多人协作
 - 有了 SVN，为啥要学 Git
-  + Git 火
-  + Git 相对于 SVN 来说，更强大，用户也非常多
+  + Git 分布式管理，适合多人协作
 - 怎么用
 - Git 的诞生
   + http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137402760310626208b4f695940a49e5348b689d095fc000
@@ -254,7 +253,9 @@ git config --list
 - `gitk`      图形化界面
 
 总结：操作 Git 的基本工作流程就是先修改文件，然后执行 `git add` 命令。
-`git add` 命令会把文件加入到暂存区，接着就可以执行 `git commit` 命令，将文件存入文档库，
+`git add` 命令会把文件加入到 暂存区，
+暂存之后 拉取上级分支代码，然后合并到本地分支，
+接着就可以执行 `git commit` 命令，将文件存入文档库，
 从而形成一次历史记录。
 
 - 问题1：关于 Git-bash 中文问题
@@ -263,6 +264,31 @@ git config --list
 - 问题3：配置 user.name 和 user.email 问题
 
 ### 工作区、暂存区、本地仓库
+
+### 分支管理
+```bash
+# 列出所有分支
+$ git branch
+
+# 查看所有分支 及 源
+$ git branch -a 
+
+# 基于当前分支新建一个分支，但依然停留在当前分支
+$ git branch [branch-name]
+
+# 基于当前分支新建一个分支，并切换到该分支
+$ git checkout -b [branch-name]
+
+# 切换到某个分支
+$ git checkout [brach-name]
+
+# 删除分支
+$ git branch -d [branch-name]
+
+# 将指定分支合并到当前分支
+$ git merge [branch-name]
+
+```
 
 ### 版本回退
 
@@ -309,32 +335,6 @@ $ git stash
 $ git stash pop
 ```
 
-### 分支管理
-```bash
-# 列出所有分支
-$ git branch
-
-# 查看所有分支 及 源
-$ git branch -a 
-
-# 基于当前分支新建一个分支，但依然停留在当前分支
-$ git branch [branch-name]
-
-# 基于当前分支新建一个分支，并切换到该分支
-$ git checkout -b [branch-name]
-
-# 切换到某个分支
-$ git checkout [brach-name]
-
-# 删除分支
-$ git branch -d [branch-name]
-
-# 将指定分支合并到当前分支
-$ git merge [branch-name]
-
-
-```
-
 ### 远程同步
 
 ```bash
@@ -372,15 +372,14 @@ Git 工作流程:git flow / github flow /gitlab flow
 
 ## Github
 
-> Github 就是程序员的新浪微博
-> 它可以让你使用社交化的方式进行编程协作、
+> 可以社交化的方式进行编程协作、
 >     - 点赞
 >     - 评论
 >     - 转发
 >     - etc.
-> 主要作用：可以免费在线托管你的仓库
+> 主要作用：可以免费在线托管代码仓库
 > 可以实现多人协作
-> 提供了一个可视化界面（Web Page）让你能直观清晰的了解你的项目源代码
+> 提供了一个可视化界面（Web Page）能直观清晰的了解你的项目源代码
 
 ### 与 Github 进行多人协作
 
