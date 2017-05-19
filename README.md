@@ -270,8 +270,8 @@ git config --list
 
 ### 分支管理
 ```bash
-# 列出所有分支
-$ git branch
+# 列出所有分支，并用*标注目前所在分支
+$ git branch 
 
 # 查看所有分支 及 源
 $ git branch -a 
@@ -290,6 +290,25 @@ $ git branch -d [branch-name]
 
 # 将指定分支合并到当前分支
 $ git merge [branch-name]
+
+# 衍合 ：
+  1. rebase命令将版本回到当前分支与branchName分支的共同祖先版本，
+  2. 手动将当前分支的变化补丁在branchName的基础上重新打一遍
+  3. 然后到branchName分支，进行快速合并）
+  **！一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作。**
+$ git rebase [branch-name]
+
+# 同步远程服务器上的数据到本地（ 找到origin并更新本地数据，然后同步版本 ）
+$ git fetch origin  
+
+# 把另一个服务器加为远程仓库
+$ git fetch [服务器名]
+
+# 跟踪远程分支
+$ git checkout -b [branchName] [origin]/[branchName]
+
+# 删除远程分支
+$ git push [远程名] :[分支名]
 
 ```
 
