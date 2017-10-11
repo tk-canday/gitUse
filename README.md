@@ -336,11 +336,11 @@ $ git reset [file]
 
 --head:git log 中最新的版本
 
-# 重置暂存区与工作区，与上一次commit保持一致
-$ git reset --hard
-
 # 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变
 $ git reset [commit]
+
+# 重置暂存区与工作区，与上一次commit保持一致
+$ git reset --hard HEAD^
 
 # 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致
 $ git reset --hard [commit]
