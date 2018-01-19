@@ -304,11 +304,12 @@ $ git fetch origin
 # 把另一个服务器加为远程仓库
 $ git fetch [服务器名]
 
-# 跟踪远程分支
+# 跟踪远程分支（因为有时候想跟踪的远程分支是你在clone代码之后创建的，这种情况下在本地会切换不到该分支）
 $ git checkout -b [branchName] [origin]/[branchName]
 
 # 删除远程分支
-$ git push [远程名] :[分支名]
+$ git push origin :[branch-name]  // 推送一个空分支到远程分支，相当于删除
+$ git push origin -d [tag <tagname>] [branch-name]  // 删除 tag 或 远程分支
 
 ```
 
@@ -321,6 +322,9 @@ $git rm --cached <file>
 
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
+
+# 清空暂存区的修改
+$ git checkout .
 
 #重命名文件并且提交到暂存区(省略add)
 $ git mv [oldFileName] [newFileName]
