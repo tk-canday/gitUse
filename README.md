@@ -288,8 +288,8 @@ $ git checkout [brach-name]
 # 删除分支
 $ git branch -d [branch-name]
 
-# 将指定分支合并到当前分支
-$ git merge [branch-name]
+# 将指定分支合并到当前分支(--no-ff表示为不使用fast-Forward合并模式)
+$ git merge [--no-ff] [branch-name]
 
 # 衍合 ：
   1. rebase命令将版本回到当前分支与branchName分支的共同祖先版本，
