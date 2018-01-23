@@ -249,8 +249,7 @@ git config --list
   + 示例：`git commit -m "日志说明" --author="操作者姓名 <邮箱>"`
   + 执行 `git commit` 的时候，Git 会要求具有用户名和邮箱的参数选项
   + 可以通过 `git config` 命令配置一下用户名和邮箱
-- `git log`   查看记录
-- `gitk`      图形化界面
+- `git log [-p] [-<n>]`   按时间顺序列出提交记录（-p 选项展开显示每次提交的内容差异 | -n表示只列出最近的n次提交）
 
 总结：
 ```
@@ -374,7 +373,7 @@ $ git remote -v
 $ git remote show [remote]
 
 # 增加一个新的远程仓库，并命名
-$ git remote add [shortname] [url]
+$ git remote add [remote] [url]
 
 # 取回远程仓库的变化，并与本地分支合并
 $ git pull [remote] [branch]
