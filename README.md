@@ -235,6 +235,8 @@ git config --global user.email "你的常用邮箱"
 git config --global gui.encoding utf-8
 # 查看配置列表项
 git config --list
+
+# .gitignore 文件（设置忽略提交的文件，一行为一条设置）
 ```
 
 ### 基本使用
@@ -250,6 +252,8 @@ git config --list
   + 执行 `git commit` 的时候，Git 会要求具有用户名和邮箱的参数选项
   + 可以通过 `git config` 命令配置一下用户名和邮箱
 - `git log [-p] [-<n>]`   按时间顺序列出提交记录（-p 选项展开显示每次提交的内容差异 | -n表示只列出最近的n次提交）
+
+- `git rm -r --cached .`  清除git缓存，因为在新建项目的时候可能因为缓存问题导致.gitignore中的设置忽略的文件已经上传
 
 总结：
 ```
