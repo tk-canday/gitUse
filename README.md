@@ -173,7 +173,7 @@ A 用户在修改完成之后提交 kingtuns.txt 到服务器， 这个时候提
 
 > [维基百科 - Git](https://zh.wikipedia.org/wiki/Git)
 
-### 学习资源介绍
+### 资源介绍
 
 - [Git教程 - 廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/)
 - [Pro Git](http://git.oschina.net/progit/)
@@ -236,7 +236,12 @@ git config --global gui.encoding utf-8
 # 查看配置列表项
 git config --list
 
+# 自动清理优化本地存储库磁盘，因为在文件修改与git操作中可能会产生多余文件或垃圾
+git config --global gc.auto 0
+
+
 # .gitignore 文件（设置忽略提交的文件，一行为一条设置）
+
 ```
 
 ### 基本使用
@@ -300,6 +305,9 @@ $ git merge [--no-ff] [branch-name]
   3. 然后到branchName分支，进行快速合并）
   **！一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行衍合操作。**
 $ git rebase [branch-name]
+
+# commit之前rebase同步别人的提交
+git pull origin [branch-name] --rebase
 
 # 同步远程服务器上的数据到本地（ 找到origin并更新本地数据，然后同步版本 ）
 $ git fetch origin  
