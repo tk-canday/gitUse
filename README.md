@@ -296,6 +296,9 @@ $ git checkout [brach-name]
 # 删除分支
 $ git branch -d [branch-name]
 
+# 分支重命名
+$ git branch (-m) <oldbranchName> <newbranchName>：
+
 # 将指定分支合并到当前分支(--no-ff表示为不使用fast-Forward合并模式)
 $ git merge [--no-ff] [branch-name]
 
@@ -387,8 +390,11 @@ $ git remote show [remote]
 # 增加一个新的远程仓库，并命名
 $ git remote add [remote] [url]
 
-# 取回远程仓库的变化，并与本地分支合并
+# 拉取远程仓库的变化，并与本地分支合并
 $ git pull [remote] [branch]
+
+# 拉取远程仓库的变化，并将本地的提交 rebase 到最新的 hard
+$ git pull origin [branch] --rebase
 
 # 上传本地指定分支到远程仓库
 $ git push [remote] [branch]
